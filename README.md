@@ -56,3 +56,8 @@ Replace:
 
 Usage
 - `skaffold dev`
+
+---
+
+## API
+The swagger REST API can be reached at `http://localhost:<PORT>/v1.0/ui`, the default PORT is 80
