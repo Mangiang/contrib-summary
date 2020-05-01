@@ -19,3 +19,5 @@ Replace:
 Usage
 
 - `skaffold dev`
+
+The settings are held by [skaffold.yaml](../skaffold.yaml)
