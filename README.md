@@ -10,4 +10,4 @@ A small tool to generate a summary of a user contributions over a specific time 
 - [Docker](./docs/DockerUsage.md)
 - [Kubernetes](./docs/KubernetesUsage.md)
 - [Skaffold](./docs/SkaffoldUsage.md)
-- [REST API](./docs/RestApiUsage.md)
+- [REST API](./docs/RestApi.md)
