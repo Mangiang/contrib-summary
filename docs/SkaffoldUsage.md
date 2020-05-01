@@ -9,8 +9,8 @@ Requirements:
 
 Replace:
 
-- the repository name with whatever you want as your repository in contrib-summary-chart/values.yaml
-- the image name with whatever you want as your image in skaffold.yaml
+- the repository name with whatever you want as your repository in [contrib-summary-chart/values.yaml](../contrib-summary-chart/values.yaml)
+- the image name with whatever you want as your image in [skaffold.yaml](../skaffold.yaml)
 
 ⚠ ⚠ ⚠
 
