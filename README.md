@@ -8,6 +8,7 @@ A small tool to generate a summary of a user contributions over a specific time 
 - [Docker](#docker)
 - [Kubernetes](#kubernetes)
 - [Skaffold](#skaffold)
+- [REST API](#rest-api)
 
 ### Local
 Requirements:
@@ -42,7 +43,7 @@ Usage
 - `helm dep build`
 - `helm install <release name> .` you can uninstall using `helm install <release name>`
 
-### Skaffold dev
+### Skaffold
 Requirements:
 - Kunernetes
 - Helm3
@@ -57,7 +58,5 @@ Replace:
 Usage
 - `skaffold dev`
 
----
-
-## API
+### REST API
 The swagger REST API can be reached at `http://localhost:<PORT>/v1.0/ui`, the default PORT is 80
