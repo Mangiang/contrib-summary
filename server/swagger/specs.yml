@@ -16,11 +16,32 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/contrib_response"
         "400":
           description: Bad Request
 
 components:
   schemas:
+    contrib_response:
+      description: The contribution dates array
+      type: array
+      items:
+        type: object
+        properties:
+          date:
+            type: string
+            format: date-time
+            description: The date of the contributions
+          contributions:
+            type: array
+            description: The contributions on this date
+            items:
+              type: string
+              description: The name of the project contributed to
+
     contrib_query:
       type: object
       required:
@@ -39,9 +60,11 @@ components:
           example: "AQWCTEW46839045EWE23"
         from:
           type: string
+          format: date-time
           description: Start DateTime (format "YYYY-mm-ddTHH:MM:SSZ")
           example: "2020-04-01T00:00:00Z"
         to:
           type: string
+          format: date-time
           description: End DateTime (format "YYYY-mm-ddTHH:MM:SSZ")
           example: "2020-05-01T00:00:00Z"

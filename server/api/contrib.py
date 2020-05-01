@@ -13,9 +13,7 @@ with open(query_path, "r") as f:
 def send_query(username: str, from_str: str, to_str: str, token: str, cursor: str):
     params = {
         "username": username,
-        # datetime.datetime.strptime(from_str, "%Y-%m-%dT%H:%M:%SZ"),
         "from": from_str,
-        # datetime.datetime.strptime(to_str, "%Y-%m-%dT%H:%M:%SZ"),
         "to": to_str,
         "cursor": cursor,
     }
@@ -54,4 +52,8 @@ def post(body: Any):
                 dates_projects[current_date] = [current_project]
         hasNextPage = repositoryContributions["pageInfo"]["hasNextPage"]
 
-    return dates_projects
+    dates_list: list = []
+    for date, contributions in dates_projects.items():
+        dates_list.append(
+            {"date": date, "contributions": contributions})
+    return dates_list
