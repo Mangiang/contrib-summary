@@ -22,8 +22,6 @@ deploy:
           helm:
             explicitRegistry: true
 
-        values:
-          image: shirito/contrib-summary
         setValueTemplates:
           repository: "{{.DIGEST}}"
           tag: ""

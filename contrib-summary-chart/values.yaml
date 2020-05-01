@@ -4,7 +4,7 @@
 
 replicaCount: 1
 
-repository: shirito/contrib-summary
+repository: contrib-summary
 tag: "latest"
 pullPolicy: IfNotPresent
 
