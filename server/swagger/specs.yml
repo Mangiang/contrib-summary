@@ -1,0 +1,47 @@
+openapi: "3.0.2"
+info:
+  title: API Title
+  version: "1.0"
+servers:
+  - url: http://localhost/v1.0
+paths:
+  /contrib:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/contrib_query"
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+
+components:
+  schemas:
+    contrib_query:
+      type: object
+      required:
+        - username
+        - token
+        - from
+        - to
+      properties:
+        username:
+          type: string
+          description: Github username to inspect
+          example: "username"
+        token:
+          type: string
+          description: Github Personal Access Token
+          example: "AQWCTEW46839045EWE23"
+        from:
+          type: string
+          description: Start DateTime (format "YYYY-mm-ddTHH:MM:SSZ")
+          example: "2020-04-01T00:00:00Z"
+        to:
+          type: string
+          description: End DateTime (format "YYYY-mm-ddTHH:MM:SSZ")
+          example: "2020-05-01T00:00:00Z"

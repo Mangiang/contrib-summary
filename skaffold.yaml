@@ -1,0 +1,38 @@
+apiVersion: skaffold/v2beta2
+kind: Config
+build:
+  local: {}
+  tagPolicy:
+    sha256: {}
+  artifacts:
+    - image: shirito/contrib-summary
+      docker:
+        dockerfile: Dockerfile
+deploy:
+  helm:
+    releases:
+      - name: contrib-summary
+        chartPath: contrib-summary-chart
+        namespace: default
+        #wait: true
+        #valuesFiles:
+        #  - contrib-summary-chart/values.yaml
+        imageStrategy:
+          #fqn: {}
+          helm:
+            explicitRegistry: true
+
+        values:
+          image: shirito/contrib-summary
+        setValueTemplates:
+          repository: "{{.DIGEST}}"
+          tag: ""
+        #recreatePods will pass --recreate-pods to helm upgrade
+        #recreatePods: true
+        #overrides builds an override values.yaml file to run with the helm deploy
+        #overrides:
+        # some:
+        #   key: someValue
+        #setValues get appended to the helm deploy with --set.
+        #setValues:
+        #some.key: someValue

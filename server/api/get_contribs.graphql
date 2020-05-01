@@ -1,0 +1,18 @@
+query get_contribs($username: String!, $from: DateTime!, $to: DateTime!, $cursor: String!) {
+  user(login: $username) {
+    contributionsCollection(from: $from, to: $to) {
+      repositoryContributions(after: $cursor, first: 100) {
+        nodes {
+          occurredAt
+          repository {
+            name
+          }
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+      }
+    }
+  }
+}
